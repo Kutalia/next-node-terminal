@@ -1,3 +1,9 @@
+A simple app for forwarding terminal commands to a Next.js server machine, executing it on the back-end and returning responses
+
+**In that regard, beware of accidentally running malicious code**
+
+It uses a custom server for handling Websocket connections, so it's not compatible for Vercel serverless functions
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

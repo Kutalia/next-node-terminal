@@ -6,7 +6,6 @@ import Terminal, { TerminalOutput } from 'react-terminal-ui';
 import { socket } from "./socket";
 
 export default function Home() {
-  const [isConnected, setIsConnected] = useState(false);
   const [transport, setTransport] = useState<string | null>(null);
   const [terminalLineData, setTerminalLineData] = useState([
     <TerminalOutput key={0}>Be careful not to run any malicious code</TerminalOutput>,
@@ -25,7 +24,6 @@ export default function Home() {
     }
 
     function onConnect() {
-      setIsConnected(true);
       setTransport(socket.io.engine.transport.name);
 
       socket.io.engine.on("upgrade", (transport) => {
@@ -34,7 +32,6 @@ export default function Home() {
     }
 
     function onDisconnect() {
-      setIsConnected(false);
       setTransport(null);
     }
 
